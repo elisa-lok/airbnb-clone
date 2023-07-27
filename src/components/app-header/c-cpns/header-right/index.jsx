@@ -25,8 +25,8 @@ const HeaderRight = memo(() => {
   return (
     <RightWrapper>
       <div className='btns'>
-        <span className='btn'>Login</span>
-        <span className='btn'>Register</span>
+        <span className='btn'>登录</span>
+        <span className='btn'>注册</span>
         <span className='btn'>
           <IconGlobal/>
         </span>
@@ -38,13 +38,13 @@ const HeaderRight = memo(() => {
         {showPanel && (
              <div className='panel'>
              <div className='top'>
-               <div className='item register'>Sign up</div>
-               <div className='item login'>Log in</div>
+               <div className='item register'>注册</div>
+               <div className='item login'>登录</div>
              </div>
    
              <div className='bottom'>
-               <div className='item'>Airbnb your home</div>
-               <div className='item'>Help</div>
+               <div className='item'>房源出租</div>
+               <div className='item'>帮助</div>
              </div>
            </div>
         )}
