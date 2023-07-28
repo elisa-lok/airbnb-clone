@@ -28,7 +28,7 @@ export const ItemWrapper = styled.div`
       margin: 10px 0 5px;
       font-size: 12px;
       font-weight: 700;
-      color: #39576a;
+      color: $(props.verifyColor);
     }
 
     .name {
@@ -54,6 +54,10 @@ export const ItemWrapper = styled.div`
 
       .count {
         margin: 0 2px 0 4px;
+      }
+
+      .MuiRating-decimal {
+        margin-right: -2px;
       }
     }
   }
