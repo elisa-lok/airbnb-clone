@@ -20,7 +20,16 @@ const RoomItem = memo(function RoomItem(props) {
           ¥{itemData.price}元/晚
         </div>
         <div className='bottom'>
-          <Rating name="read-only" value={5} readOnly sx={{fontSize: "12px", color: "red"}}/>
+          <Rating name="read-only" 
+          value={itemData.star_rating ?? 5}
+          precision={0.1}
+          readOnly 
+          sx={{fontSize: "12px", color: "#00848A", marginLeft: "-1px"}}
+          />
+          <span className='count'>{itemData.reviews_count}</span>
+          {
+            itemData.bottom_info && <span className='extra'>{itemData?.bottom_info?.content}</span>
+          }
         </div>
       </div>
     </ItemWrapper>

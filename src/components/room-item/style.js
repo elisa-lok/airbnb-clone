@@ -23,6 +23,7 @@ export const ItemWrapper = styled.div`
       width: 100%;
       height: 100%;
     }
+  }
 
     .desc {
       margin: 10px 0 5px;
@@ -56,7 +57,7 @@ export const ItemWrapper = styled.div`
         margin: 0 2px 0 4px;
       }
 
-      .MuiRating-decimal {
+      .MuiRating-icon {
         margin-right: -2px;
       }
     }
