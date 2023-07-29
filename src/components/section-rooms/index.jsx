@@ -13,7 +13,7 @@ const SectionRooms = memo(function SectionRooms(props) {
         return <RoomItem itemData={item} key={item.id}/>
       })
     }
-  </RoomsWrapper>
+    </RoomsWrapper>
   )
 })
 
