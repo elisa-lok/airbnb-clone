@@ -8,16 +8,19 @@ import { fetchHomeDataAction } from '@/store/modules/home'
 import HomeSectionV1 from './c-cpns/home-section-v1'
 import HomeSectionV2 from './c-cpns/home-section-v2'
 import HomeSectionV3 from './c-cpns/home-section-v3'
+import HomeSectionV4 from './c-cpns/home-section-v4'
 import { isEmptyO } from '@/utils'
+
 
 const Home = memo(() => {
   /** get data fron redux */
-  const { goodPriceInfo, highScoreInfo, discountInfo, recommendInfo, longforInfo } = useSelector((state) => ({
+  const { goodPriceInfo, highScoreInfo, discountInfo, recommendInfo, longforInfo, plusInfo } = useSelector((state) => ({
     goodPriceInfo: state.home.goodPriceInfo,
     highScoreInfo: state.home.highScoreInfo,
     discountInfo: state.home.discountInfo,
     recommendInfo: state.home.recommendInfo,
     longforInfo: state.home.longforInfo,
+    plusInfo: state.home.plusInfo,
   }), shallowEqual)
 
   /** dispatch */
@@ -35,6 +38,7 @@ const Home = memo(() => {
         { isEmptyO(longforInfo) && <HomeSectionV3 infoData= {longforInfo} /> }     
         { isEmptyO(goodPriceInfo) && <HomeSectionV1 infoData= {goodPriceInfo} /> }
         { isEmptyO(highScoreInfo) && <HomeSectionV1 infoData= {highScoreInfo} /> }
+        { isEmptyO(plusInfo) && <HomeSectionV4 infoData= {plusInfo} /> }
       </div>
     </HomeWrapper>
   )

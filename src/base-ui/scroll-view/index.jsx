@@ -1,5 +1,4 @@
 import React, { memo, useEffect, useState, useRef} from 'react'
-import PropTypes from 'prop-types'
 import { ViewWrapper } from './style'
 import IconArrowLeft from '@/assets/svg/icon_arrow_left';
 import IconArrowRight from '@/assets/svg/icon_arrow_right';
