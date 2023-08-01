@@ -23,7 +23,6 @@ const EntireRooms = memo(function EntireRooms(props) {
     navigate("/detail")
   }, [dispatch, navigate])
 
-
   return (
     <RoomsWrapper>
       <h2 className='title'>共{totalCount}处房源</h2>
@@ -31,7 +30,11 @@ const EntireRooms = memo(function EntireRooms(props) {
       {
           roomList.map(item => {
             return (
-              <RoomItem itemData={item} itemWidth="20%" key={item._id} ItemClick={itemClickHandle}/>
+              <RoomItem 
+              itemData={item} 
+              itemWidth="20%" 
+              key={item._id} 
+              itemClick={itemClickHandle}/>
             )
           })
         }
