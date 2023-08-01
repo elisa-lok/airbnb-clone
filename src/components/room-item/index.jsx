@@ -1,16 +1,44 @@
-import React, { memo } from 'react'
+import React, { memo, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { ItemWrapper } from './style';
 import Rating from '@mui/material/Rating';
+import { Carousel } from 'antd';
+import IconArrowLeft from '@/assets/svg/icon_arrow_left';
+import IconArrowRight from '@/assets/svg/icon_arrow_right';
 
 const RoomItem = memo(function RoomItem(props) {
   const { itemData, itemWidth = '25%' } = props;
 
+  // show the slider
+  const sliderRef = useRef();
+  function controlClickHandle(isRight = true) {
+    isRight ? sliderRef.current.next() : sliderRef.current.prev();
+  }
+
   return (
     <ItemWrapper verifyColor={itemData?.verify_info?.textColor || '#39576a'} itemWidth={itemWidth}>
       <div className='inner'>
-        <div className='cover'>
-          <img src={itemData.picture_url} alt='' />
+        <div className='slider'>
+          <div className='control'>
+            <div className='btn left' onClick={e => controlClickHandle(false)}>
+              <IconArrowLeft width="30" height="30" />
+            </div>
+            <div className='btn right' onClick={e => controlClickHandle(true)}>
+              <IconArrowRight width="30" height="30" />
+            </div>
+          </div>
+          <Carousel dots={false} ref={sliderRef}> 
+            {
+              itemData?.picture_urls?.map(item => {
+                return (
+                  <div className='cover' key={item}>
+                    <img src={item} alt='' />
+                  </div> 
+                )
+              })
+            }
+          </Carousel>
+
         </div>
         <div className='desc'>
           {itemData.verify_info.messages.join('.')}
