@@ -1,9 +1,9 @@
 import * as actionTypes from "./constants"
 
 const initialState = {
-  currentPage: 0, // 当前页码
-  roomList: [], // 房间列表
-  totalCount: 0, // 总数据个数
+  currentPage: 0, // current page
+  roomList: [], // room list
+  totalCount: 0, // total count
 
   isLoading: false
 }
