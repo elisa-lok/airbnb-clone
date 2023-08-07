@@ -2,6 +2,7 @@
   "name": "react-basic",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/airbnb-clone/",
   "dependencies": {
     "@ant-design/icons": "^5.1.4",
     "@emotion/react": "^11.11.1",
@@ -26,7 +27,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
+    "build": "set \"GENERATE_SOURCEMAP=false\" && craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
